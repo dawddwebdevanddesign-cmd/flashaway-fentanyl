@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Locator - Flash Away Fentanyl</title>
+    <meta property="og:title" content="Resource Locator - Flash Away Fentanyl" />
+    <meta property="og:description" content="Empowering high-risk regions with rapid education models and critical localization tools." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col">
+    <nav class="bg-slate-900/50 backdrop-blur-md border-b border-slate-800 px-6 py-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-red-500 tracking-wider uppercase"><span>Flash Away Fentanyl</span></a>
+            <div class="space-x-6 text-sm font-semibold">
+                <a href="index.html" class="text-slate-400 hover:text-white transition">Home</a>
+                <a href="resources.html" class="text-slate-400 hover:text-white transition">Our Mission</a>
+                <a href="quiz.html" class="text-slate-400 hover:text-white transition">Interactive Training</a>
+                <a href="map.html" class="text-blue-400 border-b-2 border-blue-400 pb-1">Resource Locator</a>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-16 w-full">
+        <div class="mb-12">
+            <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-3">Distribution Infrastructure Coordinates</div>
+            <h1 class="text-4xl font-black tracking-tight mb-4 text-white">Harm Reduction Resource Locator</h1>
+            <p class="text-slate-400 text-sm max-w-xl leading-relaxed">Find regional asset hubs, open access locks, and automated deployment infrastructure locations operating near your current perimeter coordinates.</p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl h-[550px] flex flex-col">
+                <h2 class="text-base font-black uppercase tracking-wider text-white mb-4 flex justify-between items-center">
+                    <span>Distribution Points</span>
+                    <span id="location-count" class="text-xs font-mono bg-slate-950 border border-slate-800 px-2.5 py-1 rounded-md text-blue-400">0 Available</span>
+                </h2>
+                <div id="locations-list" class="flex-grow overflow-y-auto space-y-3 pr-2 scrollbar-thin scrollbar-thumb-slate-800"></div>
+            </div>
+            <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden relative min-h-[450px] lg:min-h-full flex flex-col justify-center items-center p-8">
+                <div id="map-fallback" class="text-center max-w-sm">
+                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 flex items-center justify-center rounded-xl mx-auto mb-4 font-bold">🗺️</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Interactive Support Interface</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Select a specific regional location or resource group from the sidebar ledger to display detailed access vectors, machine placement protocols, and operational updates.</p>
+                </div>
+                <div id="active-detail-view" class="hidden w-full h-full flex flex-col justify-between"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-slate-950 border-t border-slate-900 text-center py-8 text-xs text-slate-600">&copy; 2026 Flash Away Fentanyl, Inc. All rights reserved.</footer>
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Quiz - Flash Away Fentanyl</title>
+    <meta property="og:title" content="Training Quiz - Flash Away Fentanyl" />
+    <meta property="og:description" content="Empowering high-risk regions with rapid education models and critical localization tools." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col">
+    <nav class="bg-slate-900/50 backdrop-blur-md border-b border-slate-800 px-6 py-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-red-500 tracking-wider uppercase"><span>Flash Away Fentanyl</span></a>
+            <div class="space-x-6 text-sm font-semibold">
+                <a href="index.html" class="text-slate-400 hover:text-white transition">Home</a>
+                <a href="resources.html" class="text-slate-400 hover:text-white transition">Our Mission</a>
+                <a href="quiz.html" class="text-blue-400 border-b-2 border-blue-400 pb-1">Interactive Training</a>
+                <a href="map.html" class="text-slate-400 hover:text-white transition">Resource Locator</a>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow max-w-2xl mx-auto px-4 py-16 w-full">
+        <div class="mb-8 text-center">
+            <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-3">Community Preparedness Assessment</div>
+            <h1 class="text-4xl font-black tracking-tight mb-3">Interactive Training Module</h1>
+            <p class="text-slate-400 text-sm">Simulating critical decision-making vectors to establish emergency response readiness.</p>
+        </div>
+        <div id="quiz-container" class="bg-slate-900 border border-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl">
+            <div class="flex justify-between items-center mb-6">
+                <span id="progress" class="text-xs font-bold uppercase tracking-widest text-amber-400 font-mono">Question 1 of 5</span>
+                <span id="score-badge" class="hidden text-xs font-bold uppercase tracking-widest text-emerald-400 font-mono">Score Tracker</span>
+            </div>
+            <div id="question-box" class="mb-8">
+                <h2 id="question-text" class="text-lg md:text-xl font-bold leading-snug mb-6">Loading interactive scenarios...</h2>
+                <div id="options-list" class="space-y-3"></div>
+            </div>
+            <div class="flex justify-end border-t border-slate-800 pt-6">
+                <button id="next-btn" class="hidden bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-xl transition text-sm tracking-wide uppercase">Next Scenario</button>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-slate-950 border-t border-slate-900 text-center py-8 text-xs text-slate-600">&copy; 2026 Flash Away Fentanyl, Inc. All rights reserved.</footer>
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
