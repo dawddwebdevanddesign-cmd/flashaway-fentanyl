@@ -78,7 +78,7 @@ let score = 0;
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
   const contactContainer = document.getElementById('contact-container');
-  
+
   if (contactForm && contactContainer) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (document.getElementById('quiz-container')) {
+  if (document.getElementById('quiz-container') && document.getElementById('question-box')) {
     initQuiz();
     const nextBtn = document.getElementById('next-btn');
     if (nextBtn) {
@@ -107,7 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (document.getElementById('locations-list')) {
+  if (
+    document.getElementById('locations-list') &&
+    document.getElementById('location-count') &&
+    document.getElementById('map-fallback') &&
+    document.getElementById('active-detail-view')
+  ) {
     initMap();
   }
 });
@@ -116,18 +121,18 @@ function initQuiz() {
   const qBox = document.getElementById('question-box');
   const nextBtn = document.getElementById('next-btn');
   const progressText = document.getElementById('progress');
-  
+
   if (!qBox || !nextBtn || !progressText) return;
 
   nextBtn.classList.add('hidden');
   progressText.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
 
   const activeQuestion = quizData[currentQuestion];
-  
+
   let optionsHTML = '';
   activeQuestion.options.forEach((opt, idx) => {
     optionsHTML += `
-      <button class="quiz-option w-full bg-slate-950 hover:bg-slate-850 border border-slate-800 text-left p-4 rounded-xl text-sm transition font-medium flex justify-between items-center group" data-idx="${idx}">
+      <button class="quiz-option w-full bg-slate-950 hover:bg-slate-900 border border-slate-800 text-left p-4 rounded-xl text-sm transition font-medium flex justify-between items-center group" data-idx="${idx}">
         <span>${opt}</span>
         <span class="w-5 h-5 rounded-full border border-slate-700 flex items-center justify-center text-[10px] text-transparent group-hover:border-slate-500 transition">✓</span>
       </button>
@@ -144,7 +149,7 @@ function initQuiz() {
     btn.addEventListener('click', (e) => {
       const selectedIdx = parseInt(btn.getAttribute('data-idx'));
       optionButtons.forEach(b => b.disabled = true);
-      
+
       if (selectedIdx === activeQuestion.correct) {
         score++;
         btn.classList.remove('bg-slate-950', 'border-slate-800');
@@ -154,7 +159,7 @@ function initQuiz() {
       } else {
         btn.classList.remove('bg-slate-950', 'border-slate-800');
         btn.classList.add('bg-red-500/10', 'border-red-500', 'text-red-400');
-        
+
         const correctBtn = qBox.querySelector(`.quiz-option[data-idx="${activeQuestion.correct}"]`);
         if (correctBtn) {
           correctBtn.classList.remove('bg-slate-950', 'border-slate-800');
@@ -201,9 +206,9 @@ function initMap() {
 
   locationsData.forEach((loc) => {
     const div = document.createElement('div');
-    div.className = 'bg-slate-950 hover:bg-slate-850 border border-slate-800 p-4 rounded-xl cursor-pointer transition';
+    div.className = 'bg-slate-950 hover:bg-slate-900 border border-slate-800 p-4 rounded-xl cursor-pointer transition';
     div.innerHTML = `<h3 class="font-bold text-sm text-red-400">${loc.name}</h3><p class="text-xs text-slate-400 mt-1">${loc.type}</p>`;
-    
+
     div.onclick = () => {
       fallback.classList.add('hidden');
       detailView.classList.remove('hidden');
